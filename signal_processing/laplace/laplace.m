@@ -1,14 +1,6 @@
-syms t w
+syms t s
+f = sin(2*pi*50*t)
+F = laplace(f)
 
-f = t^4
-laplace(f)
-
-f = sin(w*t)
-laplace(f)
-
-clear
-
-syms s
-f = 1/s^2
-ilaplace(f)
-
+[x,y]=meshgrid(-2*pi:0.1:2*pi, -2*pi:0.1:2*pi);
+surf(x, y, abs(subs(F, s, x+i*y)))
