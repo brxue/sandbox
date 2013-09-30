@@ -1,0 +1,53 @@
+STREAM START
+	<b>Start Document</b>
+		<b>Start Mapping</b>
+			Got scalar (value title)
+			Got scalar (value Finex 2011)
+			Got scalar (value img_url)
+			Got scalar (value /finex/html/img/)
+			Got scalar (value css_url)
+			Got scalar (value /finex/html/style/)
+			Got scalar (value js_url)
+			Got scalar (value /finex/html/js/)
+			Got scalar (value template_dir)
+			Got scalar (value html/templ/)
+			Got scalar (value default_act)
+			Got scalar (value idx)
+			Got scalar (value pages)
+				<b>Start Sequence</b>
+					<b>Start Mapping</b>
+						Got scalar (value act)
+						Got scalar (value idx)
+						Got scalar (value title)
+						Got scalar (value Welcome)
+						Got scalar (value html)
+						Got scalar (value public/welcome.phtml)
+					<b>End Mapping</b>
+					<b>Start Mapping</b>
+						Got scalar (value act)
+						Got scalar (value reg)
+						Got scalar (value title)
+						Got scalar (value Register)
+						Got scalar (value html)
+						Got scalar (value public/register.phtml)
+					<b>End Mapping</b>
+					<b>Start Mapping</b>
+						Got scalar (value act)
+						Got scalar (value log)
+						Got scalar (value title)
+						Got scalar (value Log in)
+						Got scalar (value html)
+						Got scalar (value public/login.phtml)
+					<b>End Mapping</b>
+					<b>Start Mapping</b>
+						Got scalar (value act)
+						Got scalar (value out)
+						Got scalar (value title)
+						Got scalar (value Log out)
+						Got scalar (value html)
+						Got scalar (value public/logout.phtml)
+					<b>End Mapping</b>
+				<b>End Sequence</b>
+		<b>End Mapping</b>
+	<b>End Document</b>
+STREAM END

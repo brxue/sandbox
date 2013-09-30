@@ -1,0 +1,45 @@
+<html>
+<body>
+
+	<h1>An un-ordered list</h1>
+% list = ["Ruby", "Perl", "Python"]
+	<ul>
+% for i in 0...3
+		<li><%=list[i]%></li>
+% end
+	</ul>
+
+
+	<h1>An ordered list</h1>
+	<ol>
+% for i in 0...8
+% a = (i+65).chr
+		<li><%=if i%2==0 then a else i end%></li>
+% end
+	</ol>
+
+
+	<h1>An user-defined list</h1>
+% h = {:Zhejiang=>"Hangzhou", :Shanxi=>"Xi\'an", :Jiangsu=>"Nanjing"}
+	<dl>
+% for key in h.keys
+		<dt><%=key%></dt>
+		<dd><%=h[key]%></dd>
+% end
+	</dl>
+	
+
+	<h1>A table</h1>
+	<table>
+% table = Table.new
+% table.t.each_with_index do |r,i|
+		<tr>
+% 			id = ((i==0) ? "<th>" : "<td>")
+% 			r.each do |e|
+				<%=id%><%=e%><%=id%>
+% 			end
+		</tr>
+% end
+	</table>
+</body>
+</html>
