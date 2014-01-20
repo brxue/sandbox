@@ -2,7 +2,7 @@ vlib:
 	test -d work || vlib work
 
 vlog: vlib
-	vlog use_uvm_component.sv
+	vlog test.sv
 
 vsim: vlog
 	vsim -do "run -all; q" test
