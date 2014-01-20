@@ -87,7 +87,9 @@ module test;
 	initial begin
 		// uvm_top.print_topology() will be called automatically at the end of run_test
 		uvm_top.enable_print_topology = 1;
-
+		
+		// Note: uenv hasn't been created
+		// uvm configuration is based on string looking
 		set_config_int("uenv.uc1.*", "i", 11);
 		set_config_string("uenv.uc2.ub", "s", "Hello ASIC!");
 
