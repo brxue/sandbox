@@ -16,10 +16,11 @@ package bus_vip;
 	endclass
 	
 	virtual class bus_driver_cb extends uvm_callback; 
+
+		// dummy definition of callback prototypes, users should extend this base type and override these definitions
 		virtual function bit trans_received(bus_driver driver, bus_transaction tr);
 			return 0;
 	  	endfunction
-	
 	  	virtual task trans_executed(bus_driver driver, bus_transaction tr);
 	  	endtask
 	
@@ -28,16 +29,15 @@ package bus_vip;
 	  	endfunction
 	
 	  	static string type_name = "bus_driver_cb";
-	
 	  	virtual function string get_type_name();
 			return type_name;
 	  	endfunction
 	endclass
 	
 	class bus_driver extends uvm_component;
-		uvm_blocking_put_imp #(bus_transaction,bus_driver) in;
+		uvm_blocking_put_imp #(bus_transaction, bus_driver) in;
 	
-		// regsiter callbacks
+		// regsiter callback types, this is for type checking: "bus_driver" only enables callback registering of type "bus_driver_cb", other call back types are illegal
 	  	`uvm_register_cb(bus_driver, bus_driver_cb)
 	
 	  	function new (string name, uvm_component parent=null);
@@ -46,18 +46,17 @@ package bus_vip;
 	  	endfunction
 	
 	  	static string type_name = "bus_driver";
-	
 	  	virtual function string get_type_name();
 			return type_name;
 	  	endfunction
 	
 	  	virtual function bit trans_received(bus_transaction tr);
-			// the callback functions will not be called if any of the callback function return 1
+			// the callback functions will not be called if any of the callback functions return 1
 			`uvm_do_callbacks_exit_on(bus_driver, bus_driver_cb, trans_received(this, tr), 1)
 	  	endfunction
 	
 	  	virtual task trans_executed(bus_transaction tr);
-			// always call this call back 
+			// This macro will firstly get those registered callback handles from singleton uvm_callbacks, and then call "trans_executed" on it.
 			`uvm_do_callbacks(bus_driver, bus_driver_cb, trans_executed(this, tr))
 	  	endtask
 	
@@ -86,13 +85,13 @@ class my_bus_driver_cb1 extends bus_driver_cb;
 
   	virtual function bit trans_received(bus_driver driver, bus_transaction tr);
 		static bit drop = 0;
-		driver.uvm_report_info("trans_received_cb", {"  bus_driver=",driver.get_full_name()," tr=",tr.convert2string()});
+		driver.uvm_report_info("trans_received_cb1", {"  bus_driver=",driver.get_full_name()," tr=",tr.convert2string()});
 		drop = 1 - drop;
 		return drop;
   	endfunction
 
   	virtual task trans_executed(bus_driver driver, bus_transaction tr);
-		driver.uvm_report_info("trans_executed_cb", {"  bus_driver=",driver.get_full_name()," tr=",tr.convert2string()});
+		driver.uvm_report_info("trans_executed_cb1", {"  bus_driver=",driver.get_full_name()," tr=",tr.convert2string()});
   	endtask
 
   	virtual function string get_type_name();
