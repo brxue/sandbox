@@ -5,6 +5,7 @@ import uvm_pkg::*;
 typedef enum { BUS_READ, BUS_WRITE } bus_op_t;
 typedef enum { STATUS_OK, STATUS_NOT_OK } status_t;
 
+// Basic transation which inherited from uvm_sequence_item
 class bus_trans extends uvm_sequence_item;
 	bit [11:0] addr;
 	bit [7:0] data;
@@ -14,13 +15,14 @@ class bus_trans extends uvm_sequence_item;
 	`uvm_field_int(addr,UVM_DEFAULT)
 	`uvm_field_int(data,UVM_DEFAULT)
 	`uvm_field_enum(bus_op_t,op,UVM_DEFAULT)
-	`uvm_field_utils_end
+	`uvm_object_utils_end
 
 	function new(string name="");
 		super.new(name);
 	endfunction
 endclass
 
+// Request transaction
 class bus_req extends bus_trans;
 	`uvm_object_utils(bus_req)
 
@@ -29,6 +31,7 @@ class bus_req extends bus_trans;
 	endfunction     
 endclass
 
+// Response transaction
 class bus_rsp extends bus_trans;
 	status_t status;
 
@@ -41,9 +44,12 @@ class bus_rsp extends bus_trans;
 	`uvm_object_utils_end
 endclass
 
+// Diver class templated with REQ and RSP, it will communicate with sequence through an sequencer
 class my_driver #(type REQ = uvm_sequence_item, type RSP = uvm_sequence_item) extends uvm_driver #(REQ, RSP);
 	`uvm_component_param_utils(my_driver#(REQ,RSP))
-
+	
+	// Ideally, driver will translate transactions into pin-level signal swiggles, 
+	// but for now it will just saved it.
 	local int data_array[511:0];
 
 	function new(string name, uvm_component parent);
@@ -55,21 +61,24 @@ class my_driver #(type REQ = uvm_sequence_item, type RSP = uvm_sequence_item) ex
 		RSP rsp;
 
 		forever begin
-			// get request
+			// Get sequence item from sequencer
+			// seq_item_port is a pre-defined tlm1 port in uvm_driver
+			// the 'req' object was allocated in the sequnce
 			seq_item_port.get(req);
-
+			
+			// Allocate response object
 			rsp = new();
-			rsp.set_id_info(req);
 
+			// Transaction ID will be allocated automatically by sequencer
+			rsp.set_id_info(req);
+			
 			if (req.op == BUS_READ) begin // READ
 				rsp.addr = req.addr[8:0];
 				rsp.data = data_array[rsp.addr];
-				//`uvm_info("sending", rsp.sprint(), UVM_MEDIUM)
-				`uvm_info("sending", $sformatf("read addr = %2h data = %2h", rsp.addr, rsp.data), UVM_MEDIUM)
+				`uvm_info(get_name(), $sformatf("read addr = %2h data = %2h", rsp.addr, rsp.data), UVM_MEDIUM)
 			end else begin // WRITE
 				data_array[req.addr[8:0]] = req.data;
-				//`uvm_info("sending", req.sprint(), UVM_MEDIUM)
-				`uvm_info("sending", $sformatf("write addr = %2h data = %2h", req.addr, req.data), UVM_MEDIUM)
+				`uvm_info(get_name(), $sformatf("write addr = %2h data = %2h", req.addr, req.data), UVM_MEDIUM)
 			end
 			
 			// send back response
@@ -81,43 +90,46 @@ endclass
 class my_sequence #(type REQ = uvm_sequence_item, type RSP = uvm_sequence_item) extends uvm_sequence #(REQ, RSP);
 	`uvm_object_param_utils(my_sequence#(REQ,RSP))
 
-	local static integer g_my_id = 0;
-	local integer my_id;
+	integer base_addr = 0;
 
 	function new(string name="");
 		super.new(name);
-		my_id = g_my_id++;
 	endfunction
 
 	virtual task body();
 		REQ  req;
 		RSP  rsp;
 
-		`uvm_info("my_sequence", "Starting sequence", UVM_MEDIUM)
+		`uvm_info(get_name(), "Starting sequence", UVM_MEDIUM)
 		
-		// 8*2=16 transactions
+		// Write transactions
 		for(int unsigned i = 0; i < 8; i++) begin
 			`uvm_create(req)
 			req.set_name($sformatf("req%0d_write", i));
-			req.addr = (my_id * 8) + i;
-			req.data = my_id + i + 55;
+			req.addr = base_addr + i;
+			req.data = i*i;
 			req.op   = BUS_WRITE;
 			`uvm_send(req)
 			get_response(rsp);
+		end
 
+		// Read transactions
+		for(int unsigned i = 0; i < 8; i++) begin
 			`uvm_create(req)
 			req.set_name($sformatf("req%0d_read", i));
-			req.addr = (my_id * 8) + i;
+			req.addr = base_addr + i;
 			req.data = 0;
 			req.op   = BUS_READ;
 			`uvm_send(req)
 			get_response(rsp);
-
-			if (rsp.data != (my_id + i + 55)) begin
-				`uvm_error("my_sequence", $sformatf("Error, addr: %0d, expected data: %0d, actual data: %0d",	req.addr, req.data, rsp.data))
+			
+			// Checking result
+			if (rsp.data != i*i) begin
+				`uvm_error(get_name(), $sformatf("Error, addr: %0d, expected data: %0d, actual data: %0d",	req.addr, req.data, rsp.data))
 			end
 		end
-		`uvm_info("my_sequence", "Finishing sequence", UVM_MEDIUM)
+
+		`uvm_info(get_name(), "Finishing sequence", UVM_MEDIUM)
 	endtask
 endclass
 
@@ -134,7 +146,10 @@ class env extends uvm_env;
 		super.build_phase(phase);
 		sqr = new("sequencer", this);
 		drv = new("my_driver", this);
+	endfunction
 
+	virtual function void connect_phase(uvm_phase phase);
+		super.connect_phase(phase);
 		drv.seq_item_port.connect(sqr.seq_item_export); // connect driver with sequencer
 	endfunction
 
@@ -145,7 +160,8 @@ class env extends uvm_env;
 		for (int i = 0; i < 10; i++) begin
 			int tmp = i;
 			fork begin
-				my_sequence #(bus_req, bus_rsp) the_sequence=  new($sformatf("sequence%0d", tmp));
+				my_sequence #(bus_req, bus_rsp) the_sequence = new($sformatf("sequence%0d", tmp));
+				the_sequence.base_addr = tmp * 10;
 				the_sequence.start(sqr, null); // start the sequence
 			end
 			join_none
