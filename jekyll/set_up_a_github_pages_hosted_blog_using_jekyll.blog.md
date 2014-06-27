@@ -1,10 +1,3 @@
----
-layout: post
-title:  Setup a GitHub Pages hosted blog using jekyll
-date: 2014-06-18 00:19:26
-tags: jekyll
----
-
 1. Create a empty repository on github.com (don't initialize it with README), and the name of this repository must be in the format of "yourusername.github.com".
 2. Install jekyll gem to your local computer: 
 	* gem install jekyll.

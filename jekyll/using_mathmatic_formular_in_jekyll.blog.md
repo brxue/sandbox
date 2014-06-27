@@ -1,10 +1,3 @@
----
-layout: post
-title:  "Using of mathmatic formular"
-date:   2014-06-18 00:36:43
-tags: jekyll mathmatics latex 
----
-
 This is a inline $$ 5 + 5 $$ formular, and followed by another block formular which must be preceded and appended by an empty line,
 
 $$

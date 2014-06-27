@@ -1,10 +1,3 @@
----
-layout: post
-title:  "Insert code block"
-date: 2014-06-18 21:19:26
-tags: jekyll
----
-
 The following is a piece of Python code which is used to plot a sine wave using matplotlib, the code block format is based on kramdown syntax, it seems that the syntax is not highlighted, but only shown as a block,
 
 ~~~ python
