@@ -37,12 +37,17 @@ class DstPost < Post
 		@timestamp = @basename[0,9]
 	end
 	
-	def add_front_matter
-		File.open(fullname) do |f|
-			puts "---"
-			puts "layout: post"
-			puts %Q|title: @purename.gsub("-", " ")|
-			puts "---"
+	def publish(src_post) 
+		puts "src_fullname = #{src_post.fullname}"
+		puts "dst_fullname = #{fullname}"
+		File.open(fullname, "w") do |dst|
+			dst.puts "---"
+			dst.puts "layout: post"
+			dst.puts %Q|title: #{@purename.gsub("-", " ")}|
+			dst.puts "---"
+			File.open(src_post.fullname) do |src|
+				dst.puts src.readlines
+			end
 		end
 	end
 
@@ -93,8 +98,9 @@ task :pub => dst_posts.map {|post| post.fullname}
 dst_posts.each_with_index do |dpost, i|
 	spost = src_posts[i]
 	file dpost.fullname => spost.fullname do
-		sh "cp #{spost.fullname} #{dpost.fullname}"
+		#sh "cp #{spost.fullname} #{dpost.fullname}"
 		#dpost.add_front_matter
+		dpost.publish(spost)
 	end
 end
 
