@@ -1,11 +1,3 @@
----
-layout: post
-title:  "Hello matplotlib"
-date: 2014-06-18 22:59:26
-tags: python, matplotlib
-downloads: /downloads/2014-06-18-hello-matplotlib
----
-
 The following Python code,
 
 {% highlight python %}
