@@ -9,3 +9,5 @@
 给定一个宽度为N的二进制的位串{ b }_{ N-1 }{ b }_{ N-2 }\cdots { b }_{ 2 }{ b }_{ 1 }{ b }_{ 0 }，可以根据公式-{ b }_{ N-1 }{ 2 }^{ N-1 }+\sum _{ i=0 }^{ N-2 }{ { b }_{ i }{ 2 }^{ i } } 求得它所表示的十进制数。
 
 this is a test. ![equation](http://latex.codecogs.com/gif.latex?1%2Bsin%28mc%5E2%29%0D%0A)
+
+another test. ![equation](http://latex.codecogs.com/png.latex?%5Csum_%7Bi%3D0%7D%5E%7BN-2%7D_%7B%7D)
