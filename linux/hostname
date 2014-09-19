@@ -1,2 +1,0 @@
-How to change hostname?
-	Edit /etc/sysconfig/network and then reboot
