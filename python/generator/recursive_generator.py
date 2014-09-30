@@ -1,3 +1,4 @@
+#-------------------------------
 # The Wrong Way:
 def hello1(n):
     yield n
@@ -14,8 +15,7 @@ for i in hello1(3):
     k += 1
 
 #-------------------------------
-
-# The Correct Way:
+# The Correct Way before Python 3.4:
 def hello2(n):
     yield n
     n += 1
@@ -31,3 +31,19 @@ for i in hello2(3):
         print i
     k += 1
 
+##-------------------------------
+## The Correct Way in Python 3.4:
+#def hello3(n):
+#    yield n
+#    n += 1
+#    yield from hello3(n)
+#
+#print "hello3:"
+#k = 0
+#for i in hello3(3):
+#    if k == 10:
+#        break
+#    else:
+#        print i
+#    k += 1
+#
