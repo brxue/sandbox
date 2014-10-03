@@ -1,3 +1,9 @@
+# List Branches
+
+```
+git branch # list all of the branches in your repository
+```
+
 # Create a Branch
 
 1. Two step method
@@ -11,6 +17,12 @@ git checkout <branchname> # switch to the new branch
 
 ```
 git checkout -b <branchname>
+```
+
+# Delete a Branch
+
+```
+git branch -d <branchname> # delete the specified branch
 ```
 
 # Switch to Another Brnach
