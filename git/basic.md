@@ -8,6 +8,7 @@ git config --global user.email "brxue@outlook.com"
 git config --global core.editor "/usr/bin/vim"
 git config --global color.diff always
 git config --global color.ui always
+git config --global push.default simple
 ```
 
 These settings will be saved to ~/.gitconfig.
