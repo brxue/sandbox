@@ -6,9 +6,11 @@ Before using git, you must firstly let it know who you are and your contact.
 git config --global user.name "brxue"  
 git config --global user.email "brxue@outlook.com"
 git config --global core.editor "/usr/bin/vim"
-git config --global color.diff always
-git config --global color.ui always
-git config --global push.default simple
+git config --global color.diff always # colored `git diff` result
+git config --global color.ui always # colored `git` std output
+git config --global push.default simple # only matched branch will be pushed
+git config --global credential.helper cache # set git to use the crendential memory cache
+git config --global credential.helper 'cache --timeout==28800' set the cache to timeout after 8 hour
 ```
 
 These settings will be saved to ~/.gitconfig.
