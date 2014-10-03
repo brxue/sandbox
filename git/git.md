@@ -1,8 +1,8 @@
-1. Initialization
+1. Configuration
+git config --global user.name "brxue"
+git config --global user.email "brxue@outlook.com"
+2. Initialization
 	git init
-2. Configuration
-	git config --global user.name "brxue"
-	git config --global user.email "brxue@outlook.com"
 3. Finding help 
 	git help init
 	git help config
