@@ -2,33 +2,33 @@
 git config --global user.name "brxue"
 git config --global user.email "brxue@outlook.com"
 2. Initialization
-	git init
+    git init
 3. Finding help 
-	git help init
-	git help config
-	git help add
+    git help init
+    git help config
+    git help add
 4. Checking Status
-	git status
+    git status
 5. Add to Staging Area
-	git add hello.c
-	git add */*.c
-	git add *
+    git add hello.c
+    git add */*.c
+    git add *
 6. Review Difference
-	git diff
-	git diff --cached
-	git diff HEAD
+    git diff
+    git diff --cached
+    git diff HEAD
 6. Commit to Repository
-	git commit 
-	git commit -m "Initial submit"
+    git commit 
+    git commit -m "Initial submit"
 7. Checking Out from Repository
 8. Showing Log
-	git log
-	git log -n 10
-	git log hello.c
+    git log
+    git log -n 10
+    git log hello.c
 9. Moving File
-	git mv hello.c hi.c
+    git mv hello.c hi.c
 10. Remove File
-	git rm hello.c
+    git rm hello.c
 6. Managing Branch
 7. 
-	
+    
