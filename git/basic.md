@@ -77,8 +77,8 @@ Usually `git status` will give this method as a hint.
 # Review Difference
 
 ```
-git diff
-git diff --cached
+git diff # diff changes which hasn't been staged in the working tree
+git diff --cached # diff changes which is staged but not comitted in the working tree
 git diff HEAD
 ```
 
