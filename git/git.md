@@ -2,9 +2,11 @@
 
 Before using git, you must firstly let it know who you are and your contact.
 
+```
 git config --global user.name "brxue"  
 git config --global user.email "brxue@outlook.com"
 git config --global core.editor "/usr/bin/vim"
+```
 
 These settings will be saved to ~/.gitconfig.
 
