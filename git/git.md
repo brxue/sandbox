@@ -1,6 +1,7 @@
 1. Configuration
-git config --global user.name "brxue"
-git config --global user.email "brxue@outlook.com"
+
+    git config --global user.name "brxue"
+    git config --global user.email "brxue@outlook.com"
 2. Initialization
     git init
 3. Finding help 
