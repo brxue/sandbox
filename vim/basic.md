@@ -1,5 +1,5 @@
 # Cursor Moving
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |h, j, k, l     | move to left/down/up/right
@@ -31,10 +31,9 @@
 |ma             | make a bookmark named 'a' at current cursor postion
 |`a             | go to bookmark 'a'
 |:read !ls -l   | read command output to current file
-|---------------|----------------------------------------------------------------
 
 # Insert
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |i              | enter to insert mode at the cursor
@@ -44,10 +43,9 @@
 |o              | open blank line below the current line
 |O              | open blank line above the current line
 |ESC            | exit insert mode
-|---------------|----------------------------------------------------------------
 
 # Editing
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |u              | undo
@@ -62,10 +60,9 @@
 |>>             | indent line one column right
 |<<             | indent line one column left
 |==             | auto indent current line
-|---------------|----------------------------------------------------------------
 
 # Delete
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |x              | delete the current character
@@ -75,10 +72,9 @@
 |dd             | delete current line
 |d$             | delete to end of the line
 |D              | delete to end of the line
-|---------------|----------------------------------------------------------------
 
 # Copy
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |y              | yank the current character
@@ -88,27 +84,24 @@
 |y$             | yank to end of the line
 |yix            | yank inner x
 |ytx            | yank until next x
-|---------------|----------------------------------------------------------------
 
 # Paste
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |p              | paste after the current cursor
 |P              | paste before the current cursor
-|---------------|----------------------------------------------------------------
 
 # Replace
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |r              | replace current character at cursor
 |:s/old/new/g   | replace all the old with new in the current file
 |:s/old/new/gc  | replace all the old with new in the current file, confirm each one
-|---------------|----------------------------------------------------------------
 
 # Search
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |*              | search the current word downwards
@@ -117,10 +110,9 @@
 |?pattern       | serach the pattern upwards
 |n              | repeat search in the same direction
 |N              | repeat search in the reverse direction
-|---------------|----------------------------------------------------------------
 
 # Exiting
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |:w             | save
@@ -128,38 +120,34 @@
 |:x             | save and exit
 |:q             | quit but will fail if unsaved
 |:q!            | quit without save
-|---------------|----------------------------------------------------------------
 
 # Tab
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |:tabe          | open a new tab
 |:tabe filename | open 'filename' in a new tab
 |gt             | go to the next tab
 |gT             | go to the previous tab
-|---------------|----------------------------------------------------------------
 
 # Window
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |:split         | split current window horizontally
 |:vsplit        | split current window vertically
 |CTRL-w w       | switch windows
-|---------------|----------------------------------------------------------------
 
 # Buffer
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |:e file        | edit 'file' in a new buffer
 |:bn            | go to next buffer
 |:bd            | delete a buffer (close file)
-|---------------|----------------------------------------------------------------
 
 # Visual
-|---------------|----------------------------------------------------------------
+
 | Command       | Description
 |---------------|----------------------------------------------------------------
 |v              | start visual mode
@@ -167,11 +155,12 @@
 |V              | start linewise visual mode
 |CTRL+v         | start blockwise visual mode
 |I              | start insert mode in visual mode
-|---------------|----------------------------------------------------------------
 
 # Useful Plugins
+
 DrawIt
 
 # Useful Links
+
 http://beiyuu.com/git-vim-tutorial/
 http://overapi.com/vim/
