@@ -1,22 +1,7 @@
 #include <cassert>
 #include <utility>
 #include <string>
-
 using namespace std;
-
-void constructor()
-{
-	pair<string, int> a;
-	pair<string, int> b("Hello", 11);
-	pair<string, int> c(b);
-
-	assert(a.first == "");
-	assert(a.second == 0);
-	assert(b.first == "Hello");
-	assert(b.second == 11);
-	assert(c.first == b.first);
-	assert(c.second == b.second);
-}
 
 void make__pair()
 {
@@ -38,7 +23,6 @@ void make__pair()
 
 int main()
 {
-	constructor();
 	make__pair();
 	return 0;
 }
