@@ -1,0 +1,19 @@
+set :output, "cron_log.log"
+
+every 1.minutes do
+  command "echo hello"
+end
+
+every 1.minutes do
+  command "echo hello world"
+end
+
+
+every 1.minutes do
+  runner "Test.task"
+end
+
+
+every 1.minutes do
+  rake "hello"
+end
