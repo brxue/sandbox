@@ -1,0 +1,13 @@
+[brxue@localhost /]$ lsmod | grep pp
+ppp_mppe               13002  2 
+ppp_async              17413  1 
+crc_ccitt              12707  1 ppp_async
+ppp_generic            33037  6 ppp_mppe,ppp_async
+slhc                   13450  1 ppp_generic
+nf_nat_pptp            13115  0 
+nf_nat_proto_gre       13009  1 nf_nat_pptp
+nf_conntrack_pptp      19258  1 nf_nat_pptp
+nf_conntrack_proto_gre    14287  1 nf_conntrack_pptp
+nf_nat                 26146  5 nf_nat_proto_gre,nf_nat_ipv4,nf_nat_ipv6,nf_nat_pptp,nf_nat_masquerade_ipv4
+nf_conntrack          105702  10 nf_conntrack_proto_gre,nf_nat,nf_nat_ipv4,nf_nat_ipv6,nf_nat_pptp,xt_conntrack,nf_nat_masquerade_ipv4,nf_conntrack_ipv4,nf_conntrack_ipv6,nf_conntrack_pptp
+[brxue@localhost /]$ 

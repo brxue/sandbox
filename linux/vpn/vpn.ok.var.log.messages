@@ -1,0 +1,187 @@
+Jul 26 14:42:24 localhost NetworkManager[862]: <info>  VPN connection '云梯 VPN (PPTP)' (Connect) reply received.
+Jul 26 14:42:24 localhost pppd[6944]: Plugin /usr/lib64/pppd/2.4.5/nm-pptp-pppd-plugin.so loaded.
+Jul 26 14:42:24 localhost NetworkManager: Plugin /usr/lib64/pppd/2.4.5/nm-pptp-pppd-plugin.so loaded.
+Jul 26 14:42:24 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (plugin_init): initializing
+Jul 26 14:42:24 localhost kernel: PPP generic driver version 2.4.2
+Jul 26 14:42:24 localhost pppd[6944]: pppd 2.4.5 started by root, uid 0
+Jul 26 14:42:24 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 3 / phase 'serial connection'
+Jul 26 14:42:24 localhost pppd[6944]: Using interface ppp0
+Jul 26 14:42:24 localhost pppd[6944]: Connect: ppp0 <--> /dev/pts/5
+Jul 26 14:42:24 localhost NetworkManager: Using interface ppp0
+Jul 26 14:42:24 localhost NetworkManager: Connect: ppp0 <--> /dev/pts/5
+Jul 26 14:42:24 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 5 / phase 'establish'
+Jul 26 14:42:24 localhost NetworkManager[862]: <info>  (ppp0): new Generic device (driver: 'unknown' ifindex: 5)
+Jul 26 14:42:24 localhost NetworkManager[862]: <info>  (ppp0): exported as /org/freedesktop/NetworkManager/Devices/4
+Jul 26 14:42:24 localhost pptp[6951]: nm-pptp-service-6943 log[main:pptp.c:333]: The synchronous pptp option is NOT activated
+Jul 26 14:42:26 localhost pptp[6959]: nm-pptp-service-6943 log[ctrlp_rep:pptp_ctrl.c:254]: Sent control packet type is 1 'Start-Control-Connection-Request'
+Jul 26 14:42:26 localhost pptp[6959]: nm-pptp-service-6943 log[ctrlp_disp:pptp_ctrl.c:754]: Received Start Control Connection Reply
+Jul 26 14:42:26 localhost pptp[6959]: nm-pptp-service-6943 log[ctrlp_disp:pptp_ctrl.c:788]: Client connection established.
+Jul 26 14:42:27 localhost pptp[6959]: nm-pptp-service-6943 log[ctrlp_rep:pptp_ctrl.c:254]: Sent control packet type is 7 'Outgoing-Call-Request'
+Jul 26 14:42:28 localhost pptp[6959]: nm-pptp-service-6943 log[ctrlp_disp:pptp_ctrl.c:873]: Received Outgoing Call Reply.
+Jul 26 14:42:28 localhost pptp[6959]: nm-pptp-service-6943 log[ctrlp_disp:pptp_ctrl.c:912]: Outgoing call established (call ID 0, peer's call ID 19712).
+Jul 26 14:42:30 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 6 / phase 'authenticate'
+Jul 26 14:42:34 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (get_credentials): passwd-hook, requesting credentials...
+Jul 26 14:42:34 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (get_credentials): got credentials from NetworkManager-pptp
+Jul 26 14:42:34 localhost pppd[6944]: CHAP authentication succeeded
+Jul 26 14:42:34 localhost NetworkManager: CHAP authentication succeeded
+Jul 26 14:42:34 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 8 / phase 'network'
+Jul 26 14:42:34 localhost kernel: PPP MPPE Compression module registered
+Jul 26 14:42:40 localhost pppd[6944]: MPPE 128-bit stateless compression enabled
+Jul 26 14:42:40 localhost NetworkManager: MPPE 128-bit stateless compression enabled
+Jul 26 14:42:40 localhost pppd[6944]: local  IP address 10.10.0.9
+Jul 26 14:42:40 localhost pppd[6944]: remote IP address 10.10.0.1
+Jul 26 14:42:40 localhost pppd[6944]: primary   DNS address 8.8.8.8
+Jul 26 14:42:40 localhost pppd[6944]: secondary DNS address 8.8.4.4
+Jul 26 14:42:40 localhost NetworkManager: local  IP address 10.10.0.9
+Jul 26 14:42:40 localhost NetworkManager: remote IP address 10.10.0.1
+Jul 26 14:42:40 localhost NetworkManager: primary   DNS address 8.8.8.8
+Jul 26 14:42:40 localhost NetworkManager: secondary DNS address 8.8.4.4
+Jul 26 14:42:40 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 9 / phase 'running'
+Jul 26 14:42:40 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_ip_up): ip-up event
+Jul 26 14:42:40 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_ip_up): sending Ip4Config to NetworkManager-pptp...
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): device state change: unmanaged -> unavailable (reason 'connection-assumed') [10 20 41]
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): device state change: unavailable -> disconnected (reason 'connection-assumed') [20 30 41]
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: starting connection 'ppp0'
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 1 of 5 (Device Prepare) scheduled...
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  VPN connection '云梯 VPN (PPTP)' (IP4 Config Get) reply received from old-style plugin.
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  VPN Gateway: 106.187.50.65
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  Tunnel Device: ppp0
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  IPv4 configuration:
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>    Internal Address: 10.10.0.9
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>    Internal Prefix: 32
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>    Internal Point-to-Point Address: 10.10.0.1
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>    Maximum Segment Size (MSS): 0
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>    Forbid Default Route: no
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>    Internal DNS: 8.8.8.8
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>    Internal DNS: 8.8.4.4
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>    DNS Domain: '(none)'
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  No IPv6 configuration
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  VPN connection '云梯 VPN (PPTP)' (IP Config Get) complete.
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  VPN plugin state changed: started (4)
+Jul 26 14:42:40 localhost dbus[747]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Jul 26 14:42:40 localhost NetworkManager: ** Message: PPTP service (IP Config Get) reply received.
+Jul 26 14:42:40 localhost dbus-daemon: dbus[747]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Jul 26 14:42:40 localhost systemd: Starting Network Manager Script Dispatcher Service...
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 1 of 5 (Device Prepare) started...
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): device state change: disconnected -> prepare (reason 'none') [30 40 0]
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 2 of 5 (Device Configure) scheduled...
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 1 of 5 (Device Prepare) complete.
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 2 of 5 (Device Configure) starting...
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): device state change: prepare -> config (reason 'none') [40 50 0]
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 2 of 5 (Device Configure) successful.
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 3 of 5 (IP Configure Start) scheduled.
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 2 of 5 (Device Configure) complete.
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 3 of 5 (IP Configure Start) started...
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): device state change: config -> ip-config (reason 'none') [50 70 0]
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 5 of 5 (IPv4 Configure Commit) scheduled...
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 3 of 5 (IP Configure Start) complete.
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 5 of 5 (IPv4 Commit) started...
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): device state change: ip-config -> ip-check (reason 'none') [70 80 0]
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: Stage 5 of 5 (IPv4 Commit) complete.
+Jul 26 14:42:40 localhost dbus-daemon: dbus[747]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jul 26 14:42:40 localhost dbus[747]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jul 26 14:42:40 localhost systemd: Started Network Manager Script Dispatcher Service.
+Jul 26 14:42:40 localhost nm-dispatcher: Dispatching action 'vpn-pre-up' for ppp0
+Jul 26 14:42:40 localhost nm-dispatcher: Dispatching action 'pre-up' for ppp0
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  NetworkManager state is now CONNECTED_LOCAL
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  NetworkManager state is now CONNECTED_GLOBAL
+Jul 26 14:42:40 localhost nm-dispatcher: Dispatching action 'vpn-up' for ppp0
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): device state change: ip-check -> secondaries (reason 'none') [80 90 0]
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): device state change: secondaries -> activated (reason 'none') [90 100 0]
+Jul 26 14:42:40 localhost NetworkManager[862]: <info>  (ppp0): Activation: successful, device activated.
+Jul 26 14:42:40 localhost 01-dnssec-trigger-hook: dnssec-triggerd daemon is not running!
+Jul 26 14:42:40 localhost nm-dispatcher: Script '/etc/NetworkManager/dispatcher.d/01-dnssec-trigger-hook' exited with error status 1.
+Jul 26 14:42:40 localhost systemd: Unit iscsi.service cannot be reloaded because it is inactive.
+Jul 26 14:42:40 localhost nm-dispatcher: Dispatching action 'up' for ppp0
+Jul 26 14:42:40 localhost NetworkManager[862]: <warn>  (8) 01-dnssec-trigger-hook failed (failed): Script '/etc/NetworkManager/dispatcher.d/01-dnssec-trigger-hook' exited with error status 1.
+Jul 26 14:42:40 localhost 01-dnssec-trigger-hook: dnssec-triggerd daemon is not running!
+Jul 26 14:42:40 localhost nm-dispatcher: Script '/etc/NetworkManager/dispatcher.d/01-dnssec-trigger-hook' exited with error status 1.
+Jul 26 14:42:40 localhost systemd: Unit iscsi.service cannot be reloaded because it is inactive.
+Jul 26 14:42:41 localhost NetworkManager[862]: <warn>  (9) 01-dnssec-trigger-hook failed (failed): Script '/etc/NetworkManager/dispatcher.d/01-dnssec-trigger-hook' exited with error status 1.
+Jul 26 14:43:01 localhost systemd: Starting Session 105 of user brxue.
+Jul 26 14:43:01 localhost systemd: Started Session 105 of user brxue.
+Jul 26 14:43:28 localhost pptp[6959]: nm-pptp-service-6943 log[logecho:pptp_ctrl.c:692]: Echo Reply received.
+Jul 26 14:44:01 localhost systemd: Starting Session 106 of user brxue.
+Jul 26 14:44:01 localhost systemd: Started Session 106 of user brxue.
+Jul 26 14:44:28 localhost pptp[6959]: nm-pptp-service-6943 log[logecho:pptp_ctrl.c:692]: Echo Reply received.
+Jul 26 14:45:01 localhost systemd: Starting Session 107 of user brxue.
+Jul 26 14:45:01 localhost systemd: Started Session 107 of user brxue.
+Jul 26 14:45:28 localhost pptp[6959]: nm-pptp-service-6943 log[logecho:pptp_ctrl.c:692]: Echo Reply received.
+Jul 26 14:46:01 localhost systemd: Starting Session 108 of user brxue.
+Jul 26 14:46:01 localhost systemd: Started Session 108 of user brxue.
+Jul 26 14:46:28 localhost pptp[6959]: nm-pptp-service-6943 log[logecho:pptp_ctrl.c:692]: Echo Reply received.
+Jul 26 14:47:01 localhost systemd: Starting Session 109 of user brxue.
+Jul 26 14:47:01 localhost systemd: Started Session 109 of user brxue.
+Jul 26 14:47:04 localhost NetworkManager[862]: <info>  NetworkManager state is now CONNECTED_LOCAL
+Jul 26 14:47:04 localhost dnsmasq[1564]: reading /etc/resolv.conf
+Jul 26 14:47:04 localhost dnsmasq[1564]: using nameserver 192.168.1.1#53
+Jul 26 14:47:04 localhost dnsmasq[1564]: using nameserver 8.8.4.4#53
+Jul 26 14:47:04 localhost dnsmasq[1564]: using nameserver 8.8.8.8#53
+Jul 26 14:47:04 localhost NetworkManager[862]: <info>  NetworkManager state is now CONNECTED_GLOBAL
+Jul 26 14:47:04 localhost NetworkManager[862]: <info>  Policy set 'ppp0' (ppp0) as default for IPv4 routing and DNS.
+Jul 26 14:47:04 localhost dbus-daemon: dbus[747]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Jul 26 14:47:04 localhost dbus[747]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Jul 26 14:47:04 localhost NetworkManager: ** Message: Terminated ppp daemon with PID 6944.
+Jul 26 14:47:04 localhost systemd: Starting Network Manager Script Dispatcher Service...
+Jul 26 14:47:04 localhost NetworkManager: Terminating on signal 15
+Jul 26 14:47:04 localhost NetworkManager: Modem hangup
+Jul 26 14:47:04 localhost pppd[6944]: Terminating on signal 15
+Jul 26 14:47:04 localhost pptp[6959]: nm-pptp-service-6943 log[callmgr_main:pptp_callmgr.c:242]: Closing connection (unhandled)
+Jul 26 14:47:04 localhost pptp[6959]: nm-pptp-service-6943 log[ctrlp_rep:pptp_ctrl.c:254]: Sent control packet type is 12 'Call-Clear-Request'
+Jul 26 14:47:04 localhost pptp[6959]: nm-pptp-service-6943 log[call_callback:pptp_callmgr.c:81]: Closing connection (call state)
+Jul 26 14:47:04 localhost pppd[6944]: Modem hangup
+Jul 26 14:47:04 localhost pppd[6944]: Connect time 4.4 minutes.
+Jul 26 14:47:04 localhost pppd[6944]: Sent 1049225 bytes, received 9957298 bytes.
+Jul 26 14:47:04 localhost dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost pppd[6944]: MPPE disabled
+Jul 26 14:47:04 localhost pppd[6944]: Connection terminated.
+Jul 26 14:47:04 localhost avahi-daemon[705]: Withdrawing workstation service for ppp0.
+Jul 26 14:47:04 localhost dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost NetworkManager[862]: <error> [1437893224.435026] [platform/nm-linux-platform.c:1856] delete_object(): Netlink error deleting 10.10.0.9/32 lft forever pref forever lifetime 5372-0[4294967295,4294967295] ptp 10.10.0.1 dev ppp0 src kernel: No such device (-31)
+Jul 26 14:47:04 localhost dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost NetworkManager[862]: <info>  (ppp0): device state change: activated -> unmanaged (reason 'removed') [100 10 36]
+Jul 26 14:47:04 localhost NetworkManager[862]: <info>  (ppp0): deactivating device (reason 'removed') [36]
+Jul 26 14:47:04 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 8 / phase 'network'
+Jul 26 14:47:04 localhost NetworkManager: Connect time 4.4 minutes.
+Jul 26 14:47:04 localhost NetworkManager: Sent 1049225 bytes, received 9957298 bytes.
+Jul 26 14:47:04 localhost NetworkManager: MPPE disabled
+Jul 26 14:47:04 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 10 / phase 'terminate'
+Jul 26 14:47:04 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 5 / phase 'establish'
+Jul 26 14:47:04 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 5 / phase 'establish'
+Jul 26 14:47:04 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 11 / phase 'disconnect'
+Jul 26 14:47:04 localhost NetworkManager: Connection terminated.
+Jul 26 14:47:04 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_phasechange): status 1 / phase 'dead'
+Jul 26 14:47:04 localhost NetworkManager[862]: <info>  NetworkManager state is now CONNECTED_LOCAL
+Jul 26 14:47:04 localhost NetworkManager[862]: <info>  NetworkManager state is now CONNECTED_GLOBAL
+Jul 26 14:47:04 localhost NetworkManager[862]: <info>  Policy set 'enp2s0' (enp2s0) as default for IPv4 routing and DNS.
+Jul 26 14:47:04 localhost dbus-daemon: dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost dbus-daemon: dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost dbus-daemon: dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost dbus-daemon: dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost dbus-daemon: dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost dbus[747]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jul 26 14:47:04 localhost dbus-daemon: dbus[747]: [system] Rejected send message, 10 matched rules; type="error", sender=":1.545" (uid=0 pid=6943 comm="/usr/libexec/nm-pptp-service ") interface="(unset)" member="(unset)" error name="org.freedesktop.DBus.Error.UnknownMethod" requested_reply="0" destination=":1.546" (uid=0 pid=6944 comm="/sbin/pppd pty /sbin/pptp 106.187.50.65 --nolaunch")
+Jul 26 14:47:04 localhost dbus-daemon: dbus[747]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jul 26 14:47:04 localhost systemd: Started Network Manager Script Dispatcher Service.
+Jul 26 14:47:04 localhost nm-dispatcher: Dispatching action 'vpn-down' for ppp0
+Jul 26 14:47:04 localhost gnome-session: SystemMessageCache: init      JS LOG: Removing a network device that was not added
+Jul 26 14:47:04 localhost NetworkManager: ** Message: nm-pptp-ppp-plugin: (nm_exit_notify): cleaning up
+Jul 26 14:47:04 localhost pppd[6944]: Exit.
+Jul 26 14:47:04 localhost NetworkManager: ** (nm-pptp-service:6943): WARNING **: pppd exited with error code 16
+Jul 26 14:47:04 localhost 01-dnssec-trigger-hook: dnssec-triggerd daemon is not running!
+Jul 26 14:47:04 localhost nm-dispatcher: Script '/etc/NetworkManager/dispatcher.d/01-dnssec-trigger-hook' exited with error status 1.
+Jul 26 14:47:04 localhost nm-dispatcher: Dispatching action 'down' for ppp0
+Jul 26 14:47:04 localhost NetworkManager[862]: <warn>  (11) 01-dnssec-trigger-hook failed (failed): Script '/etc/NetworkManager/dispatcher.d/01-dnssec-trigger-hook' exited with error status 1.
+Jul 26 14:47:04 localhost 01-dnssec-trigger-hook: dnssec-triggerd daemon is not running!
+Jul 26 14:47:04 localhost nm-dispatcher: Script '/etc/NetworkManager/dispatcher.d/01-dnssec-trigger-hook' exited with error status 1.
+Jul 26 14:47:04 localhost NetworkManager[862]: <warn>  (12) 01-dnssec-trigger-hook failed (failed): Script '/etc/NetworkManager/dispatcher.d/01-dnssec-trigger-hook' exited with error status 1.
+Jul 26 14:47:25 localhost NetworkManager[862]: <info>  VPN service 'pptp' disappeared
+Jul 26 14:47:36 localhost NetworkManager[862]: <info>  Starting VPN service 'pptp'...
+Jul 26 14:47:36 localhost NetworkManager[862]: <info>  VPN service 'pptp' started (org.freedesktop.NetworkManager.pptp), PID 7990
+Jul 26 14:47:36 localhost NetworkManager[862]: <info>  VPN service 'pptp' appeared; activating connections
+Jul 26 14:47:36 localhost NetworkManager[862]: <info>  VPN plugin state changed: starting (3)
+Jul 26 14:47:37 localhost NetworkManager: ** Message: pppd started with pid 7999
+

@@ -1,0 +1,37 @@
+
+[brxue@localhost ~/Downloads]$ wget http://mirrors.aliyun.com/fedora/releases/22/Everything/x86_64/os/Packages/n/NetworkManager-pptp-gnome-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm
+--2015-07-26 13:46:22--  http://mirrors.aliyun.com/fedora/releases/22/Everything/x86_64/os/Packages/n/NetworkManager-pptp-gnome-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm
+Resolving mirrors.aliyun.com (mirrors.aliyun.com)... 115.28.122.210, 112.124.140.210
+Connecting to mirrors.aliyun.com (mirrors.aliyun.com)|115.28.122.210|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 43500 (42K) [application/x-redhat-package-manager]
+Saving to: ‘NetworkManager-pptp-gnome-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm’
+
+100%[===============================================================>] 43,500      --.-K/s   in 0.04s   
+
+2015-07-26 13:46:22 (1007 KB/s) - ‘NetworkManager-pptp-gnome-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm’ saved [43500/43500]
+
+[brxue@localhost ~/Downloads]$ rpm -i NetworkManager-pptp-gnome-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm
+warning: NetworkManager-pptp-gnome-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8e1431d5: NOKEY
+error: Failed dependencies:
+        NetworkManager-pptp = 1:1.1.0-1.20150428git695d4f2.fc22 is needed by NetworkManager-pptp-gnome-1:1.1.0-1.20150428git695d4f2.fc22.x86_64
+[brxue@localhost ~/Downloads]$ wget http://mirrors.aliyun.com/fedora/releases/22/Everything/x86_64/os/Packages/n/NetworkManager-pptp-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm
+--2015-07-26 13:48:22--  http://mirrors.aliyun.com/fedora/releases/22/Everything/x86_64/os/Packages/n/NetworkManager-pptp-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm
+Resolving mirrors.aliyun.com (mirrors.aliyun.com)... 112.124.140.210, 115.28.122.210
+Connecting to mirrors.aliyun.com (mirrors.aliyun.com)|112.124.140.210|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 134844 (132K) [application/x-redhat-package-manager]
+Saving to: ‘NetworkManager-pptp-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm’
+
+100%[===============================================================>] 134,844     --.-K/s   in 0.05s   
+
+2015-07-26 13:48:23 (2.40 MB/s) - ‘NetworkManager-pptp-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm’ saved [134844/134844]
+
+[brxue@localhost ~/Downloads]$ rpm -i NetworkManager-pptp-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm
+warning: NetworkManager-pptp-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8e1431d5: NOKEY
+error: can't create transaction lock on /var/lib/rpm/.rpm.lock (Permission denied)
+[brxue@localhost ~/Downloads]$ sudo rpm -i NetworkManager-pptp-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm 
+[sudo] password for brxue: 
+warning: NetworkManager-pptp-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8e1431d5: NOKEY
+[brxue@localhost ~/Downloads]$ sudo rpm -i NetworkManager-pptp-gnome-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm
+warning: NetworkManager-pptp-gnome-1.1.0-1.20150428git695d4f2.fc22.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8e1431d5: NOKEY
