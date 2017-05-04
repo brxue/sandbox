@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang='zh-CN'>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" charset="utf-8">
+  	var imageAdder = function(){
+  		var browser = document.getElementById('imagebrowser');
+  		var images = browser.getElementsByTagName('img');
+  		
+  		//Add click event to all images within image browser
+  		for(var i=0;i<images.length;i++){
+        if (i % 2 == 0)
+  			  images[i].onclick = insertToEndOfText;
+        else
+  			  images[i].onclick = insertToCursorPosition;
+  		}
+  		
+  		function insertToEndOfText(){
+  			var content = document.getElementById('content');
+  			content.value = content.value + ' <img src="'+this.src+'" />'
+  		} 
+
+      //http://stackoverflow.com/questions/1064089/inserting-a-text-where-cursor-is-using-javascript-jquery
+      function insertToCursorPosition() {
+  			var content = document.getElementById('content');
+        var caretPos = content.selectionStart;
+        var textAreaTxt = content.value;
+        var txtToAdd = ' <img src="'+this.src+'" />';
+        
+        content.value = textAreaTxt.substring(0, caretPos) + txtToAdd + textAreaTxt.substring(caretPos);
+        
+        content.focus();
+        content.selectionStart = caretPos + txtToAdd.length;
+        content.selectionEnd = caretPos + txtToAdd.length;
+      }
+  	}
+  	
+  	window.onload = function(){
+  		imageAdder();
+  	}
+  </script>
+</head>
+
+<body>
+  <form>
+    <textarea id='content' rows='10' cols='50'></textarea>
+  </form>
+  <div id='imagebrowser'>
+    <img src='default.jpg'>
+    <img src='default2.jpg'>
+  </div>
+</body>
+</html>
