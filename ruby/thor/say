@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby 
+
+require "thor"
+
+class Say < Thor
+    class_option :verbose, :type=>:boolean
+
+    desc "hello NAME", "say hello to NAME"
+    option :from, aliases: "f", type: :string, banner: "LOCATION"
+    def hello(name)
+        if options[:from]
+            from = "from " + options[:from]
+        else
+            from = ""
+        end
+        puts "Hello #{name} #{from} #{"!!!" if options[:verbose]}"
+    end
+
+    desc "hi NAME", "say hi to NAME"
+    def hi(name)
+        puts "Hi #{name} #{"!!!" if options[:verbose]}"
+    end
+end
+
+Say.start
